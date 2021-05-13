@@ -419,7 +419,7 @@ mysql> select code, name from country order by code limit 10;
 10 rows in set (0.01 sec)
 
 ====================================
-
+mysql> select * from lunch;  => 전체항목 다보기 [*]
 mysql> select menu, price from lunch;
 +--------+-------+
 | menu   | price |
@@ -430,4 +430,4 @@ mysql> select menu, price from lunch;
 +--------+-------+
 3 rows in set (0.00 sec)
 
-mysql>
+===================================
