@@ -105,3 +105,22 @@ mysql> show tables;
 | score         |
 +---------------+
 2 rows in set (0.00 sec)
+
+============================================================
+
+mysql> insert into man values("손흥민", 30);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into man values("이강인", 21);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from man;
++--------+------+
+| name   | age  |
++--------+------+
+| 손흥민 |   30 |
+| 이강인 |   21 |
++--------+------+
+2 rows in set (0.01 sec)
+
+===========================================================
