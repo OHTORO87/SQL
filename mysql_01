@@ -417,3 +417,17 @@ mysql> select code, name from country order by code limit 10;
 | ARM  | Armenia              |
 +------+----------------------+
 10 rows in set (0.01 sec)
+
+====================================
+
+mysql> select menu, price from lunch;
++--------+-------+
+| menu   | price |
++--------+-------+
+| 짜장면 |  5000 |
+| 비빔밥 |  5000 |
+| 돈가스 |  5000 |
++--------+-------+
+3 rows in set (0.00 sec)
+
+mysql>
