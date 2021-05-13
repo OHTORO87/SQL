@@ -261,5 +261,115 @@ mysql> desc city;
 +-------------+----------+------+-----+---------+----------------+
 5 rows in set (0.01 sec)
 
+###key = primary key(절대중복되지 않는 고유한 숫자, ISBN, 주민번호 같은거), 
 =========================================================
+
+mysql> select count(*) from city;
++----------+
+| count(*) |
++----------+
+|     4079 |
++----------+
+1 row in set (0.02 sec)
+
+=========================================
+
+mysql> select name, countrycode from city limit 10;
++----------------+-------------+
+| name           | countrycode |
++----------------+-------------+
+| Kabul          | AFG         |
+| Qandahar       | AFG         |
+| Herat          | AFG         |
+| Mazar-e-Sharif | AFG         |
+| Amsterdam      | NLD         |
+| Rotterdam      | NLD         |
+| Haag           | NLD         |
+| Utrecht        | NLD         |
+| Eindhoven      | NLD         |
+| Tilburg        | NLD         |
++----------------+-------------+
+10 rows in set (0.00 sec)
+
+=================================================
+한국의 도시만 검색해보기
+
+mysql> select name, countrycode from city where countrycode = 'KOR';
++------------+-------------+
+| name       | countrycode |
++------------+-------------+
+| Seoul      | KOR         |
+| Pusan      | KOR         |
+| Inchon     | KOR         |
+| Taegu      | KOR         |
+| Taejon     | KOR         |
+| Kwangju    | KOR         |
+| Ulsan      | KOR         |
+| Songnam    | KOR         |
+| Puchon     | KOR         |
+| Suwon      | KOR         |
+| Anyang     | KOR         |
+| Chonju     | KOR         |
+| Chongju    | KOR         |
+| Koyang     | KOR         |
+| Ansan      | KOR         |
+| Pohang     | KOR         |
+| Chang-won  | KOR         |
+| Masan      | KOR         |
+| Kwangmyong | KOR         |
+| Chonan     | KOR         |
+| Chinju     | KOR         |
+| Iksan      | KOR         |
+| Pyongtaek  | KOR         |
+| Kumi       | KOR         |
+| Uijongbu   | KOR         |
+| Kyongju    | KOR         |
+| Kunsan     | KOR         |
+| Cheju      | KOR         |
+| Kimhae     | KOR         |
+| Sunchon    | KOR         |
+| Mokpo      | KOR         |
+| Yong-in    | KOR         |
+| Wonju      | KOR         |
+| Kunpo      | KOR         |
+| Chunchon   | KOR         |
+| Namyangju  | KOR         |
+| Kangnung   | KOR         |
+| Chungju    | KOR         |
+| Andong     | KOR         |
+| Yosu       | KOR         |
+| Kyongsan   | KOR         |
+| Paju       | KOR         |
+| Yangsan    | KOR         |
+| Ichon      | KOR         |
+| Asan       | KOR         |
+| Koje       | KOR         |
+| Kimchon    | KOR         |
+| Nonsan     | KOR         |
+| Kuri       | KOR         |
+| Chong-up   | KOR         |
+| Chechon    | KOR         |
+| Sosan      | KOR         |
+| Shihung    | KOR         |
+| Tong-yong  | KOR         |
+| Kongju     | KOR         |
+| Yongju     | KOR         |
+| Chinhae    | KOR         |
+| Sangju     | KOR         |
+| Poryong    | KOR         |
+| Kwang-yang | KOR         |
+| Miryang    | KOR         |
+| Hanam      | KOR         |
+| Kimje      | KOR         |
+| Yongchon   | KOR         |
+| Sachon     | KOR         |
+| Uiwang     | KOR         |
+| Naju       | KOR         |
+| Namwon     | KOR         |
+| Tonghae    | KOR         |
+| Mun-gyong  | KOR         |
++------------+-------------+
+70 rows in set (0.01 sec)
+
+====================================================================
 
