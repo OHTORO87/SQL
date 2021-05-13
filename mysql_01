@@ -387,4 +387,33 @@ show tables;
 desc session;
 
 ===================================
+원하는 자료만 제한적으로 보기
 
+mysql> use world;
+Database changed
+mysql> show tables;
++-----------------+
+| Tables_in_world |
++-----------------+
+| city            |
+| country         |
+| countrylanguage |
++-----------------+
+3 rows in set (0.00 sec)
+
+mysql> select code, name from country order by code limit 10;
++------+----------------------+
+| code | name                 |
++------+----------------------+
+| ABW  | Aruba                |
+| AFG  | Afghanistan          |
+| AGO  | Angola               |
+| AIA  | Anguilla             |
+| ALB  | Albania              |
+| AND  | Andorra              |
+| ANT  | Netherlands Antilles |
+| ARE  | United Arab Emirates |
+| ARG  | Argentina            |
+| ARM  | Armenia              |
++------+----------------------+
+10 rows in set (0.01 sec)
