@@ -1,0 +1,107 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 22
+Server version: 8.0.25 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> select now();
++---------------------+
+| now()               |
++---------------------+
+| 2021-05-13 15:50:40 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> select user();
++----------------+
+| user()         |
++----------------+
+| root@localhost |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> create database bdb;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| bdb                |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> use bdb;
+Database changed
+mysql> show tables;
+Empty set (0.01 sec)
+
+mysql> create table score(
+    -> name char(20),
+    -> kor int,
+    -> eng int,
+    -> mat int,
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 6
+mysql> create table score(
+    -> name char(20),
+    -> kor int,
+    -> eng int,
+    -> mat int);
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> select 2 * 10;
++--------+
+| 2 * 10 |
++--------+
+|     20 |
++--------+
+1 row in set (0.00 sec)
+
+mysql> show tables;
++---------------+
+| Tables_in_bdb |
++---------------+
+| score         |
++---------------+
+1 row in set (0.01 sec)
+
+mysql> create table Man(
+    -> name char(10),
+    -> age int);
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> show tables;
++---------------+
+| Tables_in_bdb |
++---------------+
+| man           |
+| score         |
++---------------+
+2 rows in set (0.00 sec)
