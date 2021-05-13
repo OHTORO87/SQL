@@ -1,0 +1,90 @@
+SQLite version 3.35.5 2021-04-19 18:32:05
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite> .oepn 'c:\\dd\\abd'
+Error: unknown command or invalid arguments:  "oepn". Enter ".help" for help
+sqlite> .open 'c:\\dd\\adb'
+sqlite> .mo co
+sqlite> .he on
+sqlite> create table mt(mount, alt);
+sqlite> .ta
+city   mt     score
+sqlite> .import 'c:\\dd\\mt.txt' mt
+sqlite> select * from mt;
+mount  alt
+-----  ----
+설악산    1900
+지로산    2915
+덕유산    1300
+sqlite> select alt, mount from mt;
+alt   mount
+----  -----
+1900  설악산
+2915  지로산
+1300  덕유산
+sqlite> select mount as'산이름' alt as'해발' from mt;
+Error: near "alt": syntax error
+sqlite> select mount as'산이름', alt as'해발' from mt;
+산이름  해발
+---  ----
+설악산  1900
+지로산  2915
+덕유산  1300
+sqlite> insert into mt values('한라산',1950);
+sqlite> select mount as'산이름', alt as'해발' from mt;
+산이름  해발
+---  ----
+설악산  1900
+지로산  2915
+덕유산  1300
+한라산  1950
+sqlite> update mt set alt = 1708 where mount = '설악산';
+sqlite> select mount as'산이름', alt as'해발' from mt;
+산이름  해발
+---  ----
+설악산  1708
+지로산  2915
+덕유산  1300
+한라산  1950
+sqlite> update mt set alt = '지리산' where mount = '지로산';
+sqlite> select mount as'산이름', alt as'해발' from mt;
+산이름  해발
+---  ----
+설악산  1708
+지로산  지리산
+덕유산  1300
+한라산  1950
+sqlite> update mt set alt = 2915 where alt = '지리산';
+sqlite> select mount as'산이름', alt as'해발' from mt;
+산이름  해발
+---  ----
+설악산  1708
+지로산  2915
+덕유산  1300
+한라산  1950
+sqlite> update mt set mount = '지로산' where mount = '지리산';
+sqlite> select mount as'산이름', alt as'해발' from mt;
+산이름  해발
+---  ----
+설악산  1708
+지로산  2915
+덕유산  1300
+한라산  1950
+sqlite> update mt set mount = '지리산' where mount = '지로산';
+sqlite> select mount as'산이름', alt as'해발' from mt;
+산이름  해발
+---  ----
+설악산  1708
+지리산  2915
+덕유산  1300
+한라산  1950
+sqlite> .schema
+CREATE TABLE score(name, kor, eng, mat);
+CREATE TABLE city(city_name, city_pop);
+CREATE TABLE mt(mount, alt);
+sqlite> drop table mt;
+sqlite> .schema
+CREATE TABLE score(name, kor, eng, mat);
+CREATE TABLE city(city_name, city_pop);
+sqlite>
