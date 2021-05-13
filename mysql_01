@@ -371,5 +371,20 @@ mysql> select name, countrycode from city where countrycode = 'KOR';
 +------------+-------------+
 70 rows in set (0.01 sec)
 
-====================================================================
+====================================
+### 자료 보는 방법 ###
+
+#DB LIST 보기
+show databases;
+
+#sys라는 DB에 접근
+use sys;
+
+#테이블 분류
+show tables;
+
+#세부정보
+desc session;
+
+===================================
 
